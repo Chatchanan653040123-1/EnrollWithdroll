@@ -2,7 +2,7 @@ from authentication import Authentication as auth
 def main():
     try:
         while True:
-            select = int(input("ยินดีต้อนรับ โปรดเลือก\n1.สมัครสมาชิก\n2.ล็อคอิน\nYour input:"))
+            select = int(input("ยินดีต้อนรับ โปรดเลือก\n1.สมัครสมาชิก\n2.ล็อคอิน\nคำตอบ:"))
             attemps = 0
             if select == 1:
                 print("สมัครสมาชิกกรุณากรอกตามแบบฟอร์มนี้")
@@ -15,8 +15,8 @@ def main():
                 password = input("รหัสผ่าน : ")
                 print(auth.register(fname, lname, nickname, email, phoneNumber, userName, password))
             elif select == 2:
-                userName = input("Username:")
-                password = input("Password:")
+                userName = input("ชื่อผู้ใช้:")
+                password = input("รหัสผ่าน:")
                 auth.login(userName, password)
             elif attemps == 3:
                 print("คุณใส่กรอกผิดเกินกว่าที่กำหนด โปรดลองใหม่อีกครั้งในภายหลัง")
