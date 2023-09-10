@@ -1,5 +1,4 @@
-from common import *
-from enroll import *
+from enroll import Enroll
 class User:
     def userMenu():
         while True:

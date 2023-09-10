@@ -1,7 +1,7 @@
 import json
-from common import *
-from admin import *
-from user import *
+from common import setAdmin, setLogin, setUserName, common, userPath, emailStrength, passwordStrength
+from admin import Admin
+from user import User
 class Authentication:
     #ล็อคอิน
     def login(userName, password):

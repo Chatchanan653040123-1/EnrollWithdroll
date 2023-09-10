@@ -1,4 +1,4 @@
-from common import *
+from common import getLogin, getUserName, userPath, subjectPath
 import json
 class Enroll:
     def enroll():

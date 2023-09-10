@@ -1,5 +1,5 @@
 import json
-from common import *
+from common import subjectPath,userPath,getLogin,getAdmin,common,setLogin
 class Admin:
 
     def addSubject():
@@ -96,20 +96,17 @@ class Admin:
             print("คุณยังไม่ได้ล็อคอินหรือไม่ใช่แอดมิน")
             return
         print("\n\n\nยินดีต้อนรับ นี่คือเมนูแอดมิน\n")
+        selectList = {
+            1: Admin.addSubject,
+            2: Admin.editSubject,
+            3: Admin.deleteSubject,
+            4: Admin.getSubject,
+            5: Admin.getStudent,
+            6: Admin.logout
+        }
         while True:
             select = int(input("โปรดเลือก\n1.เพิ่มวิชา\n2.แก้ไขวิชา\n3.ลบวิชา\n4.ดูรายวิชาที่เปิดสอน\n5.ดูรายชื่อนักเรียนทั้งหมด\n6.Log out\nYour input:"))
-            if select == 1:
-                Admin.addSubject()
-            elif select == 2:
-                Admin.editSubject()
-            elif select == 3:
-                Admin.deleteSubject()
-            elif select == 4:
-                print(Admin.getSubject())
-            elif select == 5:
-                print(Admin.getStudent())
-            elif select == 6:
-                Admin.logout()
-                break
+            if select in selectList:
+                selectList[select]()
             else:
-                print("กรุณาเลือกใหม่อีกครั้ง")
+                print("Invalid input. Please try again.")
