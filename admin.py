@@ -1,7 +1,6 @@
 import json
 from common import subjectPath,userPath,getLogin,getAdmin,common,setLogin
 class Admin:
-
     def addSubject():
         while True:
             if input("คุณต้องการลงทะเบียนเรียนใช่หรือไม่ (y/n): ") == "n":
@@ -105,8 +104,6 @@ class Admin:
             6: Admin.logout
         }
         while True:
-            select = int(input("โปรดเลือก\n1.เพิ่มวิชา\n2.แก้ไขวิชา\n3.ลบวิชา\n4.ดูรายวิชาที่เปิดสอน\n5.ดูรายชื่อนักเรียนทั้งหมด\n6.Log out\nYour input:"))
-            if select in selectList:
-                selectList[select]()
-            else:
-                print("Invalid input. Please try again.")
+            select = int(input("โปรดเลือก\n1.เพิ่มวิชา\n2.แก้ไขวิชา\n3.ลบวิชา\n4.ดูรายวิชาที่เปิดสอน\n5.ดูรายชื่อนักเรียนทั้งหมด\n6.เมนูผู้ใช้\nYour input:"))
+            selectList[select]() if select in selectList else print("Invalid input. Please try again.")
+            break

@@ -27,4 +27,5 @@ def main():
                 print("-------------\n-------------\nกรุณาเลือกใหม่อีกครั้ง")
     except ValueError:
         print("กรุณากรอกตัวเลขเท่านั้น")
-main()
+while True:
+    main()
