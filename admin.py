@@ -88,7 +88,7 @@ class Admin:
             print(e)
 
     def logout():
-        setLogin(False)
+        callback(False,setLogin)
         print("ออกจากระบบสำเร็จ")
 
     def admin():

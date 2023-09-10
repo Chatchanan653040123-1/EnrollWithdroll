@@ -10,14 +10,14 @@ class Authentication:
                 data = json.load(file)
             if userName in data and data[userName]["password"] == password and data[userName]["isAdmin"] == True:
                 print("ยินดีต้อนรับแอดมิน", data[userName]["fname"], data[userName]["lname"])
-                setAdmin(True)
-                setLogin(True)
-                setUserName(userName)
+                callback(True,setAdmin)
+                callback(True,setLogin)
+                callback(userName, setUserName)
                 Admin.admin()
             if userName in data and data[userName]["password"] == password:
                 print("ยินดีต้อนรับคุณ", data[userName]["fname"], data[userName]["lname"])
-                setLogin(True)
-                setUserName(userName)
+                callback(True,setLogin)
+                callback(userName, setUserName)
                 User.userMenu()
             elif userName not in data:
                 print("ไม่มีชื่อผู้ใช้ในระบบ กรุณาลองใหม่อีกครั้ง")
@@ -27,9 +27,9 @@ class Authentication:
             print(e)
     #สมัครสมาชิก
     def register(fname, lname, nickname, email, phoneNumber, userName, password):
-        if not emailStrength(email):
+        if not callback(email, emailStrength):
             return "\n-------------------------\nอีเมลไม่ถูกต้อง\n-------------------------\n"
-        if not passwordStrength(password):
+        if not callback(password,passwordStrength):
             return "\n-------------------------\nรหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร\nรหัสผ่านต้องประกอบไปด้วยตัวอักษรพิมพ์ใหญ่ พิมพ์เล็ก และตัวเลข\n-------------------------\n"
         try:
             with open(userPath, "r") as file:

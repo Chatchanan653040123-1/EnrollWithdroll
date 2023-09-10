@@ -4,7 +4,8 @@ userNameCache = ""
 isLogin = False
 isAdmin = False
 domain =[".com",".net",".co.th",".ac.th",".go.th",".or.th",".in.th",".mil",".int",".net",".edu",".gov",".org",".biz",".info",".mobi",".name",".tv",".ws",".asia",".xxx",".idv.tw",".me",".co",".cc",".bz",".de",".tw",".eu",".us",".uk",".ca",".cn",".fr",".in",".jp",".kr",".ru",".sg",".vn",".com.tw",".net.tw",".org.tw",".com.cn",".net.cn",".org.cn",".gov.cn",".co.jp",".co.uk",".co.kr",".co.th",".co.in",".co.id",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve"]
-
+def callback(status,operation):
+    return operation(status)
 def setUserName(name):
     global userNameCache
     userNameCache = name
