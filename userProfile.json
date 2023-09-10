@@ -1,14 +1,12 @@
 {
-    "ChangerzaryX": {
-        "fname": "Chatchanan",
-        "lname": "Panyaprasirtkit",
-        "nickname": "Chang",
-        "email": "chatchanan.pa@kkumail.com",
-        "phoneNumber": "0962276090",
-        "password": "Cn16022547",
+    "1": {
+        "fname": "1",
+        "lname": "1",
+        "nickname": "1",
+        "email": "@.com",
+        "phoneNumber": "1",
+        "password": "1",
         "isAdmin": true,
-        "subject": [
-            "SC810001"
-        ]
+        "subject": []
     }
 }

@@ -9,20 +9,22 @@ class Authentication:
             with open(userPath, "r") as file:
                 data = json.load(file)
             if userName in data and data[userName]["password"] == password and data[userName]["isAdmin"] == True:
-                print("ยินดีต้อนรับแอดมิน", data[userName]["fname"], data[userName]["lname"])
+                print("\n\nยินดีต้อนรับแอดมิน", data[userName]["fname"], data[userName]["lname"])
                 common(True,setAdmin)
                 common(True,setLogin)
                 common(userName, setUserName)
                 Admin.admin()
-            if userName in data and data[userName]["password"] == password:
-                print("ยินดีต้อนรับคุณ", data[userName]["fname"], data[userName]["lname"])
+            if userName in data and data[userName]["password"] == password and data[userName]["isAdmin"] == False:
+                print("\n\nยินดีต้อนรับคุณ", data[userName]["fname"], data[userName]["lname"])
                 common(True,setLogin)
                 common(userName, setUserName)
                 User.userMenu()
             elif userName not in data:
-                print("ไม่มีชื่อผู้ใช้ในระบบ กรุณาลองใหม่อีกครั้ง")
+                print("\n\nไม่มีชื่อผู้ใช้ในระบบ กรุณาลองใหม่อีกครั้ง")
+            elif data[userName]["password"] != password:
+                print("\n\nรหัสผ่านผิด กรุณาลองใหม่อีกครั้ง")
             else:
-                print("รหัสผ่านผิด กรุณาลองใหม่อีกครั้ง")
+                print("กรุณา Login อีกครั้ง")
         except Exception as e:
             print(e)
     #สมัครสมาชิก

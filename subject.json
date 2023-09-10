@@ -3,5 +3,15 @@
         "teacher": "Pakpoom",
         "subject": "Calculus for engineering",
         "section": "1"
+    },
+    "n": {
+        "teacher": "x",
+        "subject": "x",
+        "section": "x"
+    },
+    "x": {
+        "teacher": "x",
+        "subject": "x",
+        "section": "x"
     }
 }
