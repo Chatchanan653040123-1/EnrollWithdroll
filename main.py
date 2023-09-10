@@ -26,6 +26,6 @@ def main():
                 attemps += 1
                 print("-------------\n-------------\nกรุณาเลือกใหม่อีกครั้ง")
     except ValueError:
-        print("กรุณากรอกตัวเลขเท่านั้น")
+        print("กรุณากรอกตัวเลขเท่านั้น\n")
 while True:
     main()

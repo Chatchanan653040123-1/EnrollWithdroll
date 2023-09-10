@@ -24,7 +24,7 @@ class Authentication:
             elif data[userName]["password"] != password:
                 print("\n\nรหัสผ่านผิด กรุณาลองใหม่อีกครั้ง")
             else:
-                print("กรุณา Login อีกครั้ง")
+                print("\n\nกรุณา Login อีกครั้ง")
         except Exception as e:
             print(e)
     #สมัครสมาชิก
@@ -38,11 +38,11 @@ class Authentication:
                 data = json.load(file)  
             newData = {userName:{"fname":fname,"lname":lname,"nickname":nickname,"email":email,"phoneNumber":phoneNumber,"password":password,"isAdmin":False,"subject":[]}}
             if userName in data:
-                return "มีชื่อผู้ใช้นี้อยู่ในระบบแล้ว"
+                return "\n\nมีชื่อผู้ใช้นี้อยู่ในระบบแล้ว"
             data.update(newData) 
             with open(userPath, "w") as file:
                 json.dump(data, file, indent=4)
-            return "สมัครสมาชิกสำเร็จ กรุณาเข้าสู่ระบบ"
+            return "\n\nสมัครสมาชิกสำเร็จ กรุณาเข้าสู่ระบบ"
         except Exception as e:
             return e
         

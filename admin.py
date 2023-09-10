@@ -15,13 +15,13 @@ class Admin:
                 with open(subjectPath, "r") as file:
                     data = json.load(file)
                 if id in data:
-                    print(f"รหัสวิชา {id} มีอยู่ในระบบแล้ว")
+                    print(f"รหัสวิชา {id} มีอยู่ในระบบแล้ว\n\n")
                     return
                 newData = {id: {"teacher":teacher,"subject":subject,"section": section}}
                 data.update(newData)
                 with open(subjectPath, "w") as file:
                     json.dump(data, file, indent=4)
-                print(f"เพิ่ม {subject} สำเร็จแล้ว")
+                print(f"เพิ่ม {subject} สำเร็จแล้ว\n\n")
             except Exception as e:
                 print(e)
 
@@ -45,9 +45,9 @@ class Admin:
                         data[id]["teacher"] = new_teacher
                     with open(subjectPath, "w") as file:
                         json.dump(data, file, indent=4)
-                    print(f"แก้ไข {id} สำเร็จแล้ว")
+                    print(f"แก้ไข {id} สำเร็จแล้ว\n\n")
                 else:
-                    print(f"ไม่พบรหัสวิชา {id} ในระบบ")
+                    print(f"ไม่พบรหัสวิชา {id} ในระบบ\n\n")
             except Exception as e:
                 print(e)
 
@@ -65,9 +65,9 @@ class Admin:
                     del data[id]
                     with open(subjectPath, "w") as file:
                         json.dump(data, file, indent=4)
-                    print(f"ลบ {id} สำเร็จแล้ว")
+                    print(f"ลบ {id} สำเร็จแล้ว\n\n")
                 else:
-                    print(f"ไม่พบรหัสวิชา {id} ในระบบ")
+                    print(f"ไม่พบรหัสวิชา {id} ในระบบ\n\n")
             except Exception as e:
                 print(e)
 
@@ -121,9 +121,9 @@ class Admin:
                     data[id]["password"] = new_password
                 with open(userPath, "w") as file:
                     json.dump(data, file, indent=4)
-                print(f"แก้ไข {id} สำเร็จแล้ว")
+                print(f"แก้ไข {id} สำเร็จแล้ว\n\n")
             else:
-                print(f"ไม่พบชื่อผู้ใช้ {id} ในระบบ")
+                print(f"ไม่พบชื่อผู้ใช้ {id} ในระบบ\n\n")
         except Exception as e:
             print(e)
     def deleteStudent():
@@ -138,9 +138,9 @@ class Admin:
                 del data[id]
                 with open(userPath, "w") as file:
                     json.dump(data, file, indent=4)
-                print(f"ลบ {id} สำเร็จแล้ว")
+                print(f"ลบ {id} สำเร็จแล้ว\n\n")
             else:
-                print(f"ไม่พบชื่อผู้ใช้ {id} ในระบบ")
+                print(f"ไม่พบชื่อผู้ใช้ {id} ในระบบ\n\n")
         except Exception as e:
             print(e)
     def addStudent():
@@ -160,12 +160,12 @@ class Admin:
                     data = json.load(file)  
                 newData = {userName:{"fname":fname,"lname":lname,"nickname":nickname,"email":email,"phoneNumber":phoneNumber,"password":password,"isAdmin":False,"subject":[]}}
                 if userName in data:
-                    print("มีชื่อผู้ใช้นี้อยู่ในระบบแล้ว")
+                    print("มีชื่อผู้ใช้นี้อยู่ในระบบแล้ว\n\n")
                     return
                 data.update(newData) 
                 with open(userPath, "w") as file:
                     json.dump(data, file, indent=4)
-                print("เพิ่มข้อมูลนักเรียนสำเร็จ")
+                print("เพิ่มข้อมูลนักเรียนสำเร็จ\n\n")
             except Exception as e:
                 print(e)
     def setAdmin():
@@ -180,9 +180,9 @@ class Admin:
                 data[id]["isAdmin"] = True
                 with open(userPath, "w") as file:
                     json.dump(data, file, indent=4)
-                print(f"เพิ่มสิทธิ์แอดมิน {id} สำเร็จแล้ว")
+                print(f"เพิ่มสิทธิ์แอดมิน {id} สำเร็จแล้ว\n\n")
             else:
-                print(f"ไม่พบชื่อผู้ใช้ {id} ในระบบ")
+                print(f"ไม่พบชื่อผู้ใช้ {id} ในระบบ\n\n")
         except Exception as e:
             print(e)
     def removeAdmin():
@@ -197,9 +197,9 @@ class Admin:
                 data[id]["isAdmin"] = False
                 with open(userPath, "w") as file:
                     json.dump(data, file, indent=4)
-                print(f"ลบสิทธิ์แอดมิน {id} สำเร็จแล้ว")
+                print(f"ลบสิทธิ์แอดมิน {id} สำเร็จแล้ว\n\n")
             else:
-                print(f"ไม่พบชื่อผู้ใช้ {id} ในระบบ")
+                print(f"ไม่พบชื่อผู้ใช้ {id} ในระบบ\n\n")
         except Exception as e:
             print(e)
 
@@ -221,6 +221,8 @@ class Admin:
             11: Admin.logout
         }
         while True:
+            if input("คุณต้องการเข้าสู่เมนูแอดมินใช่หรือไม่ (y/n): ") == "n":
+                return
             with open(userPath, "r") as file:
                 data = json.load(file)
             if (not getLogin() or not data[getUserName()]["isAdmin"]):

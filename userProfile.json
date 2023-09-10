@@ -1,12 +1,22 @@
 {
-    "1": {
-        "fname": "1",
-        "lname": "1",
-        "nickname": "1",
-        "email": "@.com",
-        "phoneNumber": "1",
-        "password": "1",
+    "ChangerzaryX": {
+        "fname": "Chatchanan",
+        "lname": "Panyaprasirtkit",
+        "nickname": "Chang",
+        "email": "chatchanan.pa@kkumail.com",
+        "phoneNumber": "0962276090",
+        "password": "Cn16022547!",
         "isAdmin": true,
+        "subject": []
+    },
+    "Tuay": {
+        "fname": "Kondee",
+        "lname": "deemak",
+        "nickname": "dee",
+        "email": "dee@gmail.com",
+        "phoneNumber": "0841456589",
+        "password": "Cn16022547!",
+        "isAdmin": false,
         "subject": []
     }
 }

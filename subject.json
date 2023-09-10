@@ -1,17 +1,12 @@
 {
-    "SC810001": {
+    "SC81001": {
         "teacher": "Pakpoom",
         "subject": "Calculus for engineering",
-        "section": "1"
+        "section": "13.00-16.00"
     },
-    "n": {
-        "teacher": "x",
-        "subject": "x",
-        "section": "x"
-    },
-    "x": {
-        "teacher": "x",
-        "subject": "x",
-        "section": "x"
+    "EN81400": {
+        "teacher": "Kanda Saikaew",
+        "subject": "Advanced computer programming",
+        "section": "9.00-12.00"
     }
 }

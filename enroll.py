@@ -3,7 +3,7 @@ import json
 class Enroll:
     def enroll():
         if (not getLogin()):
-            print("คุณยังไม่ได้ล็อคอิน")
+            print("คุณยังไม่ได้ล็อคอิน\n")
             return
         elif input("คุณต้องการลงทะเบียนเรียนใช่หรือไม่ (y/n): ") == "n":
             return
@@ -12,7 +12,7 @@ class Enroll:
             with open(subjectPath, "r") as file:
                 data = json.load(file)
             for i in data:
-                print(f"{i} {data[i]['subject']} {data[i]['section']} {data[i]['teacher']}")
+                print(f"รหัสวิชา:{i} วิชา:{data[i]['subject']} เวลาเรียน:{data[i]['section']} ชื่ออาจารย์:{data[i]['teacher']}")
             print("---------------")
             subject = input("กรุณากรอกรหัสวิชาที่ต้องการลงทะเบียน: ")
             if subject in data:
@@ -24,7 +24,9 @@ class Enroll:
                 data[getUserName()]["subject"].append(subject)
                 with open(userPath, "w") as file:
                     json.dump(data, file, indent=4)
-                print(f"ลงทะเบียน {subject} สำเร็จแล้ว")
+                print(f"ลงทะเบียน {subject} สำเร็จแล้ว\n")
+            else:
+                print("ไม่มีรหัสวิชานี้ในระบบ\n")
         except Exception as e:
             print(e)
     def withdraw():
@@ -45,6 +47,8 @@ class Enroll:
                 data[getUserName()]["subject"].remove(subject)
                 with open(userPath, "w") as file:
                     json.dump(data, file, indent=4)
-                print(f"ถอน {subject} สำเร็จแล้ว")
+                print(f"ถอน {subject} สำเร็จแล้ว\n")
+            else:
+                print("คุณไม่ได้ลงทะเบียนวิชานี้\n")
         except Exception as e:
             print(e)
