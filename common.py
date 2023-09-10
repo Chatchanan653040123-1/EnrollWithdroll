@@ -4,7 +4,7 @@ userNameCache = ""
 isLogin = False
 isAdmin = False
 domain =[".com",".net",".co.th",".ac.th",".go.th",".or.th",".in.th",".mil",".int",".net",".edu",".gov",".org",".biz",".info",".mobi",".name",".tv",".ws",".asia",".xxx",".idv.tw",".me",".co",".cc",".bz",".de",".tw",".eu",".us",".uk",".ca",".cn",".fr",".in",".jp",".kr",".ru",".sg",".vn",".com.tw",".net.tw",".org.tw",".com.cn",".net.cn",".org.cn",".gov.cn",".co.jp",".co.uk",".co.kr",".co.th",".co.in",".co.id",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve",".co.nz",".co.za",".co.il",".co.at",".co.ve"]
-def callback(status,operation):
+def common(status,operation):
     return operation(status)
 def setUserName(name):
     global userNameCache
@@ -28,8 +28,9 @@ def passwordStrength(password):
     has_upper = any(char.isupper() for char in password)
     has_lower = any(char.islower() for char in password)
     has_digit = any(char.isdigit() for char in password)
+    has_special = any(not char.isalnum() for char in password)
     is_length_valid = len(password) >= 8
-    return has_upper and has_lower and has_digit and is_length_valid
+    return has_upper and has_lower and has_digit and is_length_valid and has_special
 
 def emailStrength(email):
     for i in domain:
